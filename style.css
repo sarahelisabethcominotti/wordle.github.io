@@ -1,131 +1,146 @@
-/* html {
-  scroll-behavior: smooth;
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    main {
+        transform: scale(.8)
+    }
+}
+
+/* HEADER CSS */
+h1 {
+    font-weight: bolder;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, sans-serif;
+    transform: scale(.8, 1);
+    margin-left: calc(50% - 60px);
+    /* look up font lesson to add little lines to the top and bottom of letters */
+}
+
+.question-mark {
+    border: none;
+    background-color: #ffffff;
+    margin-left: auto;
+}
+
+/* POP-UP CSS */
+.popup {
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 450px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index:1;
+   
+    .example-row {
+        transform: scale(0.7);
+        text-align: center;
+        p {
+            text-align:left;
+            font-size: 20px
+        }
+    }
+}
+
+/* GAMOVER POPUP */
+
+.game-over {
+    display: none
+}
+
+.game-over-button  {
+        height: 50px;
+        width: 120px;
+        border: none;
+        background-color: #d4d6da;
+        border-radius: 6px;
+        margin-top: 5px;
+        font-size: 20px;
+    }
+
+
+/* KEYBOARD CSS */
+/* .virtual-keyboard {
+    width: 100%;
 } */
 
-body {
-  font-family: Arial, Helvetica, sans-serif}
-
-main {
-  padding: 0 20px;
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* transform: scale(1.5); */
+    position: relative;
+    top: 450px; left: 0px;
 }
 
-.container {
-  display: flex;
-  align-items: center;
+
+
+.key {
+    height: 60px;
+    width: 60px;
+    border: none;
+    background-color: #d4d6da;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+    /* transform: scale(2); */
 }
 
-.language-switch {
-  margin: auto;
-  padding: 0 10px;
+.delete {
+    width: 150px
 }
 
-.vertical-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* GRID CSS */
 
-.images img, .images figcaption {
-  width: 311px;
-}
-
-figcaption {
-  padding-bottom: 38px;
-  padding-top: 5px;
-}
-
-.hide-unhide {
-  padding-bottom: 20px;
-}
-
-.dropbtn {
-  background-color: #D99E67;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-left: auto;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  margin-top: 28px;
-  margin-left: -145px
-}
-
-a {
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  color: black;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+.inactive-cell-border {
+    border: #d3d6da 1px solid
 
 }
 
-.dropdown-content a:hover {
-  background-color: #D99E67
+.active-cell-border {
+    border: #000000 2px solid
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.wrong-cell {
+    color: #ffffff;
+    background-color: #a2a5af
 }
 
-.dropdown:hover .dropbtn {
-  background-color: #D99E67;
-}
-
-header {
-  padding: 0 15px;
-  background-color: #D99E67;
-}
-
-.title {
-  text-align: center;
-}
-
-.descriptive-text {
-  text-align: center;
+.correct-letter {
+    color:#ffffff;
+    background-color: #e3e365
 
 }
 
-.extra {
-  display: none;
+.correct-cell {
+    color: #ffffff;
+    background-color: #62d362
 }
 
-p {
-  display: inline;
+.content-positioning {
+    width: 500px;
+    margin: 0 auto
 }
 
-input[type="checkbox"] {
-  height: 2em;
-  display: block;
-  appearance: none;
+.letter-grid {
+    width: 450px;
+    height: 75px;
+    .col div{
+        /* height: 50px;
+        width: 50px; */ 
+        width: 100%;
+        height: 100%;
+        position: relative; 
+ }
+
 }
 
-label {
-  position: relative;
-  padding: 1em;
-  cursor: pointer;
+.col div {
+    font-size: 25px;
 }
 
-.dots.dots:has(~input[type="checkbox"]:checked) {
-  display: none;
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url("../downloads/UbuntuMono-Regular.ttf")
 }
 
-.extra:has(~input[type="checkbox"]:checked) {
-  display: inline;
-}
