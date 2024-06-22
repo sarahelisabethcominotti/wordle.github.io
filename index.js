@@ -10,10 +10,8 @@ console.log(wordArray);
 var openPopup = document.getElementById("open-popup");
 var popupWindow = document.getElementById("popup");
 var closeButton = document.getElementById("close-popup");
-var closeGameOver = document.getElementById("close-game-over");
 // var closeGameWon = document.getElementById("close-game-won");
-var gameOverWindow = document.getElementById("game-over");
-var gameWonWindow = document.getElementById("game-won");
+
 
 //KEYBOARD - Assigning event listners to the buttons (elements)
 const keys = document.querySelectorAll(".key");
@@ -26,8 +24,8 @@ guessingLogic(
   keys,
   firstRow,
   cellIndex,
-  gameOverWindow,
-  gameWonWindow
+  // gameOverWindow,
+  // gameWonWindow
 );
 
 // open popup
@@ -41,10 +39,7 @@ closeButton.addEventListener("click", function () {
   popupWindow.style.display = "none";
 });
 
-//close gameover
-closeGameOver.addEventListener("click", function () {
-  gameOverWindow.style.display = "none";
-});
+
 
 // //close gameover
 // closeGameWon.addEventListener("click", function () {

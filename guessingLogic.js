@@ -1,17 +1,16 @@
-import { checkArrays } from "./checkWord.js";
-
+import { checkGame } from "./checkGame.js";
 function guessingLogic(
   wordArray,
   keys,
   firstRow,
-  cellIndex,
   gameOverWindow,
   gameWonWindow
 ) {
+  let cellIndex = 1;
+
+  // event listeners for virtual keyboard
   keys.forEach((key) => {
     key.addEventListener("click", () => {
-      const cell = document.getElementById(`cell${cellIndex}`);
-
       if (key.classList.contains("delete")) {
         if (cellIndex) {
           cellIndex--;
@@ -24,34 +23,21 @@ function guessingLogic(
         }
         return;
       }
-
-      if (cell) {
-        cell.textContent = key.textContent.toUpperCase();
-        cell.classList.add("active-cell-border");
-        firstRow.push(cell.textContent);
-        // console.log(firstRow);
-        cellIndex++;
-      }
-
-      // Check word when rows are complete
-      if (cellIndex % 5 === 1 && cellIndex !== 1) {
-        let rowIndex = Math.floor(cellIndex / 5);
-        let row = firstRow.slice((rowIndex - 1) * 5, rowIndex * 5);
-
-        console.log(`Row ${rowIndex} complete:`, row);
-
-        if (checkArrays(wordArray, row, (rowIndex - 1) * 5)) {
-        }
-
-        if (row.join("") === wordArray.join("")) {
-          gameWonWindow.style.display = "block";
-        } else if (rowIndex === 6) {
-          // Last row condition
-          gameOverWindow.style.display = "block";
-        }
-      }
+      checkGame(
+        key,
+        wordArray,
+        firstRow,
+        cellIndex,
+        gameOverWindow,
+        gameWonWindow
+      );
+      // console.log(cellIndex)
+      
+      cellIndex++;
+      
     });
   });
+  // event listeners for physical keyboard
 }
 
 export { guessingLogic };
