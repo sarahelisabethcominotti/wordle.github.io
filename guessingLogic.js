@@ -1,6 +1,13 @@
 import { checkArrays } from "./checkWord.js";
 
-function guessingLogic(wordArray, keys, firstRow, cellIndex, gameOverWindow, gameWonWindow) {
+function guessingLogic(
+  wordArray,
+  keys,
+  firstRow,
+  cellIndex,
+  gameOverWindow,
+  gameWonWindow
+) {
   keys.forEach((key) => {
     key.addEventListener("click", () => {
       const cell = document.getElementById(`cell${cellIndex}`);
@@ -27,59 +34,21 @@ function guessingLogic(wordArray, keys, firstRow, cellIndex, gameOverWindow, gam
       }
 
       // Check word when rows are complete
+      if (cellIndex % 5 === 1 && cellIndex !== 1) {
+        let rowIndex = Math.floor(cellIndex / 5);
+        let row = firstRow.slice((rowIndex - 1) * 5, rowIndex * 5);
 
-      if (cellIndex === 6) {
-        console.log("First row complete:", firstRow);
-        if (checkArrays(wordArray, firstRow, 0)) {
-        }
-        firstRow.join("") === wordArray.join("") &&
-          (gameWonWindow.style.display = "block");
-      }
-      if (cellIndex === 11) {
-        let secondRow = firstRow.slice(5, 10);
-        console.log("Second row complete:", secondRow);
-        if (checkArrays(wordArray, secondRow, 5)) {
-        }
-        secondRow.join("") === wordArray.join("") &&
-          (gameWonWindow.style.display = "block");
-      }
-      if (cellIndex === 16) {
-        let thirdRow = firstRow.slice(10, 15);
-        console.log("Third row complete:", thirdRow);
-        if (checkArrays(wordArray, thirdRow, 10)) {
-        }
-        thirdRow.join("") === wordArray.join("") &&
-          (gameWonWindow.style.display = "block");
-      }
-      if (cellIndex === 21) {
-        let fourthRow = firstRow.slice(15, 20);
-        console.log("Fourth row complete:", fourthRow);
-        if (checkArrays(wordArray, fourthRow, 15)) {
-        }
-        fourthRow.join("") === wordArray.join("") &&
-          (gameWonWindow.style.display = "block");
-      }
-      if (cellIndex === 26) {
-        let fifthRow = firstRow.slice(20, 25);
-        console.log("Fifth row complete:", fifthRow);
-        if (checkArrays(wordArray, fifthRow, 20)) {
-        }
-        firstRow.join("") === wordArray.join("") &&
-          (gameWonWindow.style.display = "block");
-      }
-      if (cellIndex === 31) {
-        let sixthRow = firstRow.slice(25, 30);
-        console.log("Sixth row complete:", sixthRow);
-        if (checkArrays(wordArray, sixthRow, 25)) {
+        console.log(`Row ${rowIndex} complete:`, row);
+
+        if (checkArrays(wordArray, row, (rowIndex - 1) * 5)) {
         }
 
-        if (sixthRow.join("") === wordArray.join("")) {
-          (gameWonWindow.style.display = "block");
-        }
-        else {
+        if (row.join("") === wordArray.join("")) {
+          gameWonWindow.style.display = "block";
+        } else if (rowIndex === 6) {
+          // Last row condition
           gameOverWindow.style.display = "block";
-        }         
-        
+        }
       }
     });
   });
