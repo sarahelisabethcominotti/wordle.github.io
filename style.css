@@ -44,8 +44,10 @@ h1 {
 /* GAMOVER POPUP */
 
 .game-over, .game-won {
-    display: none
+    display: none;
 }
+
+
 
 .game-over-button  {
         height: 50px;
@@ -143,38 +145,3 @@ h1 {
     font-family: "Ubuntu Mono";
     src: url("../downloads/UbuntuMono-Regular.ttf")
 }
-
-
-/* @media screen and (max-width: 670px) {
-
-  
-  
-.key {
-    height: 50px;
-    width: 43px;
-    
-}
-.delete {
-    height: 50px;
-    width: 120;
-    
-}
-}
-
-@media screen and (max-width: 500px) {
-
-  
-  
-    .key {
-        height: 50px;
-        width: 35px;
-        
-    }
-
-    .delete {
-        height: 50px;
-        width: 120;
-        
-    }
-
-    } */

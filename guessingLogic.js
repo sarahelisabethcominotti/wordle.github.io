@@ -72,10 +72,14 @@ function guessingLogic(wordArray, keys, firstRow, cellIndex, gameOverWindow, gam
         console.log("Sixth row complete:", sixthRow);
         if (checkArrays(wordArray, sixthRow, 25)) {
         }
-        sixthRow.join("") === wordArray.join("") &&
+
+        if (sixthRow.join("") === wordArray.join("")) {
           (gameWonWindow.style.display = "block");
-        //game over popup
-        gameOverWindow.style.display = "block";
+        }
+        else {
+          gameOverWindow.style.display = "block";
+        }         
+        
       }
     });
   });
