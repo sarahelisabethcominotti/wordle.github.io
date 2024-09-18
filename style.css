@@ -145,3 +145,15 @@ h1 {
     font-family: "Ubuntu Mono";
     src: url("../downloads/UbuntuMono-Regular.ttf")
 }
+
+@media screen and (max-width: 668px)  {
+
+    .key {
+        height: 60px;
+        width: 40px
+    }
+    .delete {
+        width: 130px
+    }
+    
+}

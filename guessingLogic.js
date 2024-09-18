@@ -10,7 +10,7 @@ function guessingLogic(
 
   // event listeners for virtual keyboard
   keys.forEach((key) => {
-    key.addEventListener("click", () => {
+    key.addEventListener("", () => {
       if (key.classList.contains("delete")) {
         if (cellIndex) {
           cellIndex--;
