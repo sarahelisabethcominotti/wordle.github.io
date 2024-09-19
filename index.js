@@ -15,7 +15,7 @@ var closeButton = document.getElementById("close-popup");
 
 //KEYBOARD - Assigning event listners to the buttons (elements)
 const keys = document.querySelectorAll(".key");
-const del = document.getElementById("backspace");
+const del = document.getElementById("delete");
 let cellIndex = 1;
 let firstRow = [];
 

@@ -9,7 +9,7 @@ function guessingLogic(
   let cellIndex = 1;
 
   function handleInput(keyContent) {
-    if (keyContent === "Backspace") {
+    if (keyContent === "Delete") {
       if (cellIndex > 1) {
         cellIndex--;
         const deleteLetter = document.getElementById(`cell${cellIndex}`);
@@ -43,7 +43,7 @@ function guessingLogic(
   keys.forEach((key) => {
     key.addEventListener("click", () => {
       const keyContent = key.classList.contains("delete")
-        ? "Backspace"
+        ? "Delete"
         : key.textContent.trim();
 
       handleInput(keyContent); 

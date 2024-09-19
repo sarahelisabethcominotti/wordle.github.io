@@ -2,7 +2,7 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 100%;
     main {
-        transform: scale(.8)
+        transform: scale(.9)
     }
 }
 
@@ -139,6 +139,7 @@ h1 {
 
 .col div {
     font-size: 25px;
+    padding: 16px;
 }
 
 @font-face {
@@ -149,11 +150,29 @@ h1 {
 @media screen and (max-width: 668px)  {
 
     .key {
-        height: 60px;
-        width: 40px
+        height: 45px;
+        width: 25px
     }
     .delete {
         width: 130px
+    }
+
+    .letter-grid {
+        width: 300px;
+        height: 50px;
+        
+    }
+
+    .keyboard-container {
+        top: 340px;
+        /* width: 450px; */
+    }
+
+    .delete {
+        width: 80px
+    }
+    .col div {
+        padding: 6px
     }
     
 }
